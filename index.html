@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Nhlaka app</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="controller/app.js"></script>
+</head>
+<body ng-controller="GameController">
+    <div>
+        <div>
+            Guesses left ::{{guesses}}
+        </div>
+        <div>
+            Your incorrect guesses :: 
+            <span ng-repeat="letter in incorrectLettersChosen">
+                {{letter}}
+            </span>
+        </div>
+        <div>
+            Your correct guesses ::
+            <span ng-repeat="letter in correctLettersChosen">
+                {{letter}}
+            </span>
+        </div>
+        <div>You have to guess: {{displayeWord}}</div>
+        <div>
+            <div>
+                <input type="text" name="guess" ng-model="input.letter" />
+                <button ng-click="letterChosen()" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>
